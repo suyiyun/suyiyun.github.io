@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Su Yiyun | Personal Website</title>
+  <title>Yiyun Su | Personal Website</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
   <style>
@@ -428,21 +428,21 @@
       <div class="section-label">About</div>
       <h1>Su Yiyun</h1>
       <p class="subtitle">
-        PhD Applicant &nbsp;·&nbsp;
-        <span>[Your University / Institution]</span>
       </p>
       <p>
-        I am a researcher with a strong interest in [your research area, e.g., machine learning, computational biology, linguistics]. My work focuses on [brief description of your core focus], aiming to [what you hope to achieve or understand].
+        I am a researcher and software engineer working at the intersection of agentic AI systems, knowledge grounding, and trustworthy machine learning. My work focuses on building LLM-based agents that reason reliably over structured data and complex environments — from designing exploration scaffolds for long-horizon agentic tasks to developing retrieval-augmented systems for enterprise Text-to-SQL applications.
       </p>
       <p>
-        I hold a [degree] from [university] and am currently applying to PhD programs in [field]. I am particularly interested in working on problems at the intersection of [topic A] and [topic B].
+        I hold an M.S. in Information Technology from Rutgers University and bring industry experience from Amazon Web Services and Axon, where I built large-scale AI infrastructure and LLM-powered workflows. I am applying to PhD programs to pursue fundamental research on how autonomous agents can ground reasoning in structured knowledge, generalize across domains, and behave reliably in open-ended real-world settings.
       </p>
       <div class="interests">
-        <span class="tag">Research Interest 1</span>
-        <span class="tag">Research Interest 2</span>
-        <span class="tag">Research Interest 3</span>
-        <span class="tag">Research Interest 4</span>
-        <span class="tag">Research Interest 5</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">LLM Agent Scaffolds</span>
+        <span class="tag">Knowledge Grounding</span>
+        <span class="tag">Text-to-SQL</span>
+        <span class="tag">Vision-Language Models</span>
+        <span class="tag">Model Merging</span>
+        <span class="tag">Trustworthy ML</span>
       </div>
       <div class="links-row">
         <a class="btn btn-primary" href="cv.pdf" target="_blank">
@@ -473,54 +473,89 @@
 
     <div class="research-grid">
       <div class="research-card">
-        <div class="research-icon">🔬</div>
-        <h3>Research Area 1</h3>
-        <p>Brief description of this research direction and what motivates your interest in it. 2–3 sentences work well here.</p>
+        <div class="research-icon">🤖</div>
+        <h3>Agentic AI &amp; LLM Exploration</h3>
+        <p>I study how LLM-based agents can discover and reuse compositional reasoning strategies across long-horizon tasks. My work on StratEx introduces typed strategy programs as the exploration unit, applying Bayesian (Thompson sampling) selection to escape the "strategy collapse" failure mode that plagues action-level scaffolds — validated on SWE-bench Lite, WebArena, and ToolBench-IR.</p>
       </div>
       <div class="research-card">
-        <div class="research-icon">📊</div>
-        <h3>Research Area 2</h3>
-        <p>Describe the methods, questions, or domain you work in for this area. Keep it accessible to a broad academic audience.</p>
+        <div class="research-icon">🗄️</div>
+        <h3>Knowledge Grounding &amp; Text-to-SQL</h3>
+        <p>I investigate how agentic systems can reliably translate natural language into structured queries over large, ambiguous enterprise schemas. My Agentic-SQL taxonomy (ICIC 2026) categorizes Text-to-SQL methods by inference autonomy, and GraphRAGQuery extends this with graph-based knowledge ingestion pipelines that substantially improve grounding accuracy over flat retrieval baselines.</p>
       </div>
       <div class="research-card">
         <div class="research-icon">🧠</div>
-        <h3>Research Area 3</h3>
-        <p>What problems are you trying to solve? What makes this important? How does your background contribute?</p>
+        <h3>Vision-Language Models for Medical AI</h3>
+        <p>I explore how foundation models can be adapted for high-stakes visual reasoning under domain shift. SAM-GPT re-engineers SAM 2 with a Hilbert-Mamba encoder to localize brain lesions across heterogeneous imaging modalities, then grounds VLM report generation with precise spatial prompts — achieving 80.25% classification accuracy across glioma, infarction, and epilepsy cases.</p>
       </div>
       <div class="research-card">
-        <div class="research-icon">🌐</div>
-        <h3>Research Area 4</h3>
-        <p>A fourth focus area or methodology, such as data collection, model evaluation, human subjects research, etc.</p>
+        <div class="research-icon">⚡</div>
+        <h3>Efficient Model Composition &amp; Merging</h3>
+        <p>I work on scalable methods for combining specialized models without catastrophic interference. MM introduces neuron-level selectivity and a trainable routing mechanism that identifies task-critical neurons before fusion, maintaining stable accuracy as merged task count scales from 2 to 10 — offering a practical path to versatile, storage-efficient foundation models.</p>
       </div>
     </div>
 
     <div class="timeline">
-      <div class="section-label" style="margin-top: 2.5rem;">Experience</div>
+      <div class="section-label" style="margin-top: 2.5rem;">Industry Experience</div>
 
       <div class="timeline-item">
-        <div class="timeline-year">2024–Now</div>
+        <div class="timeline-year">2025–Now</div>
         <div class="timeline-content">
-          <h4>Research Assistant</h4>
-          <div class="org">Lab / Group Name · University Name</div>
-          <p>Brief description of your role, what you worked on, and any outcomes. E.g., "Developed a pipeline for processing X, contributing to a paper submitted to Y."</p>
+          <h4>Software Development Engineer</h4>
+          <div class="org">Axon · Seattle, WA</div>
+          <p>Built AI-powered developer tooling integrating Splunk and Grafana via MCP for automated log analysis and anomaly detection. Architected zero-downtime migration of distributed messaging infrastructure (Kafka, Temporal, Cassandra) across 12 microservices to AWS, with direct integration into AWS Bedrock for LLM-powered workflows — achieving a 60% reduction in deployment time for mission-critical evidence management systems.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-year">2023</div>
+        <div class="timeline-year">2022–2025</div>
         <div class="timeline-content">
-          <h4>Research Intern</h4>
-          <div class="org">Organization / Company Name</div>
-          <p>What you built, studied, or contributed. Mention any tools or datasets involved.</p>
+          <h4>Software Development Engineer</h4>
+          <div class="org">Amazon Web Services · New York, NY</div>
+          <p>Led development of a Financial Reporting Service for the AWS Bedrock Marketplace Commerce platform. Built data-source web connectors for the AWS Bedrock Knowledge Base, enabling structured RAG for AI agent applications and increasing web crawling throughput 4×. Launched the Amazon Managed Blockchain Query Service (June 2023) and engineered data pipelines handling 500+ TB of Bitcoin and Ethereum historical data.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-year">2020–2024</div>
+        <div class="timeline-year">2022</div>
         <div class="timeline-content">
-          <h4>B.Sc. in [Your Major]</h4>
-          <div class="org">University Name</div>
-          <p>GPA: X.XX / 4.0 &nbsp;·&nbsp; Relevant coursework: Course 1, Course 2, Course 3.</p>
+          <h4>Systems Analyst — Production Reliability Engineer</h4>
+          <div class="org">Visa Technology · Remote, Austin TX</div>
+          <p>Supported the Visa Installment contactless payment service as a DevOps engineer, managing weekly Kubernetes deployments via Jenkins CI/CD and switching traffic across globally distributed RedShift servers for 10M+ customers.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-content">
+          <h4>Software Engineer Intern</h4>
+          <div class="org">RingCentral · Fort Lauderdale, FL</div>
+          <p>Built the Glip-Express-Errors TypeScript library end-to-end, improving HTTP error handling efficiency by 50%. Led the "Turn cold call to smart call" disruptive technology project, winning second place at the company intern showcase.</p>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top: 2.5rem;">Education</div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2020–2021</div>
+        <div class="timeline-content">
+          <h4>M.S. in Information Technology</h4>
+          <div class="org">Rutgers University · New Brunswick, NJ </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2016–2018</div>
+        <div class="timeline-content">
+          <h4>B.S. in Information Systems</h4>
+          <div class="org">Northern Illinois University · DeKalb, IL </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2014–2016</div>
+        <div class="timeline-content">
+          <h4>B.E. in Automation Systems</h4>
+          <div class="org">Beijing Technology and Business University · Beijing, China </div>
         </div>
       </div>
 
@@ -538,16 +573,12 @@
         <div class="pub-num">1</div>
         <div>
           <div class="pub-title">
-            <a href="#">Title of Your Most Recent Paper or Preprint</a>
+            <a href="#">StratEx: Typed Strategy Programs for Bayesian Exploration in LLM-Based Agents</a>
           </div>
-          <div class="pub-authors">
-            <span class="me">Su Yiyun</span>, Co-Author A, Co-Author B, Senior Author
-          </div>
-          <div class="pub-venue">Conference / Journal Name, Year</div>
+          <div class="pub-authors"><span class="me">Yiyun Su</span> et al.</div>
+          <div class="pub-venue">Under Review · NeurIPS 2026</div>
           <div class="pub-links">
-            <a class="pub-link" href="#">PDF</a>
-            <a class="pub-link" href="#">arXiv</a>
-            <a class="pub-link" href="#">Code</a>
+            <a class="pub-link" href="Published Paper/13273_StratEx_Typed_Strategy_P.pdf">PDF</a>
           </div>
         </div>
       </div>
@@ -556,15 +587,12 @@
         <div class="pub-num">2</div>
         <div>
           <div class="pub-title">
-            <a href="#">Title of Another Paper or Workshop Paper</a>
+            <a href="#">MM: Merging Models via Important Neurons</a>
           </div>
-          <div class="pub-authors">
-            Co-Author A, <span class="me">Su Yiyun</span>, Senior Author
-          </div>
-          <div class="pub-venue">Workshop at Conference Name, Year</div>
+          <div class="pub-authors"><span class="me">Yiyun Su</span> et al.</div>
+          <div class="pub-venue">Under Review · ACM Multimedia 2026</div>
           <div class="pub-links">
-            <a class="pub-link" href="#">PDF</a>
-            <a class="pub-link" href="#">Poster</a>
+            <a class="pub-link" href="Published Paper/4649_MM_Merging_Models_via_Imp.pdf">PDF</a>
           </div>
         </div>
       </div>
@@ -573,14 +601,70 @@
         <div class="pub-num">3</div>
         <div>
           <div class="pub-title">
-            <a href="#">Title of Undergraduate Thesis or Technical Report</a>
+            <a href="#">Agentic-SQL Revisited: Autonomy-Based Taxonomy and Empirical Benchmark Analysis for LLM Text-to-SQL</a>
           </div>
-          <div class="pub-authors">
-            <span class="me">Su Yiyun</span>
-          </div>
-          <div class="pub-venue">Undergraduate Thesis · University Name, 2024</div>
+          <div class="pub-authors"><span class="me">Yiyun Su</span> et al.</div>
+          <div class="pub-venue">Accepted · ICIC 2026</div>
           <div class="pub-links">
-            <a class="pub-link" href="#">PDF</a>
+            <a class="pub-link" href="Published Paper/benchmark.pdf">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">4</div>
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2512.24013" target="_blank">Bridging the Perception-Cognition Gap: Re-engineering SAM2 with Hilbert-Mamba for Robust VLM-based Medical Diagnosis</a>
+          </div>
+          <div class="pub-authors">Hao Wu, Hui Li, <span class="me">Yiyun Su</span></div>
+          <div class="pub-venue">Preprint · arXiv 2025</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2512.24013" target="_blank">arXiv</a>
+            <a class="pub-link" href="Published Paper/2512.24013v1.pdf">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">5</div>
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2511.01243" target="_blank">CenterMamba-SAM: Center-Prioritized Scanning and Temporal Prototypes for Brain Lesion Segmentation</a>
+          </div>
+          <div class="pub-authors">Yu Tian, Zhongheng Yang, Chenshi Liu, <span class="me">Yiyun Su</span>, Ziwei Hong, Zexi Gong, Jingyuan Xu</div>
+          <div class="pub-venue">IEEE BIBM 2025</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2511.01243" target="_blank">arXiv</a>
+            <a class="pub-link" href="Published Paper/2511.01243v1.pdf">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">6</div>
+        <div>
+          <div class="pub-title">
+            <a href="#">SAM-GPT: Brain Lesion Diagnostic Report Generation via Hilbert Curve Enhanced SAM 2 and Vision-Language Models</a>
+          </div>
+          <div class="pub-authors"><span class="me">Yiyun Su</span> et al.</div>
+          <div class="pub-venue">Under Review · NeuroComputing</div>
+          <div class="pub-links">
+            <a class="pub-link" href="Published Paper/SAM-GPT.pdf">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">7</div>
+        <div>
+          <div class="pub-title">
+            <a href="#">Cross-Modal Prompt Learning and Dual-Branch Knowledge Transfer for Cloth-Changing Person Re-identification</a>
+          </div>
+          <div class="pub-authors">Yongkang Ding, Zhongheng Yang, <span class="me">Yiyun Su</span>, Yu Tian, Zi Ye, Xiangzhou Jian</div>
+          <div class="pub-venue"> Knowledge-Based Systems </div>
+          <div class="pub-links">
+            <a class="pub-link" href="Published Paper/INFFUS-D-25-05008.pdf">PDF</a>
           </div>
         </div>
       </div>
