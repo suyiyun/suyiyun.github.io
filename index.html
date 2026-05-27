@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Su Yiyun | Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --surface: #ffffff;
+      --border: #e8e8e4;
+      --text: #1a1a1a;
+      --text-secondary: #555550;
+      --text-muted: #999990;
+      --accent: #2d5a8e;
+      --accent-light: #eef3f9;
+      --accent-hover: #1e4070;
+      --tag-bg: #f0f4f9;
+      --tag-text: #2d5a8e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── MAIN LAYOUT ─── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ─── HERO ─── */
+    #about {
+      padding-top: 5rem;
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 3rem;
+      align-items: start;
+    }
+    .hero-text h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-text .subtitle {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 1.4rem;
+    }
+    .hero-text .subtitle span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .hero-text p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .hero-text p + p { margin-top: 0.9rem; }
+
+    .interests {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid #d0dff0;
+      padding: 3px 11px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    .avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d0dff0 0%, #b8ccec 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      border: 3px solid var(--border);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .avatar-placeholder { color: #2d5a8e; opacity: 0.7; }
+
+    /* ─── LINKS ROW ─── */
+    .links-row {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border-color: #c5d8ee;
+    }
+    .btn-outline:hover { background: var(--accent-light); }
+
+    /* ─── RESEARCH ─── */
+    #research h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .research-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .research-card:hover {
+      border-color: #c5d8ee;
+      box-shadow: 0 2px 16px rgba(45, 90, 142, 0.07);
+    }
+    .research-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .research-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .research-icon {
+      font-size: 22px;
+      margin-bottom: 0.7rem;
+    }
+
+    /* ─── EXPERIENCE TIMELINE ─── */
+    .timeline { margin-top: 2rem; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.2rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .timeline-item:first-child { border-top: none; }
+    .timeline-year {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+    .timeline-content h4 {
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .timeline-content .org {
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .timeline-content p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    /* ─── PUBLICATIONS ─── */
+    #publications h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      padding: 1.3rem 0;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .pub-num {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding-top: 3px;
+      text-align: right;
+    }
+    .pub-title {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+    .pub-title a { color: inherit; text-decoration: none; }
+    .pub-title a:hover { color: var(--accent); }
+    .pub-authors {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 3px;
+    }
+    .pub-authors .me { font-weight: 600; color: var(--text); }
+    .pub-venue {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .pub-links {
+      margin-top: 6px;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .pub-link {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid #c5d8ee;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--accent-light);
+      transition: background 0.15s;
+    }
+    .pub-link:hover { background: #dde9f5; }
+
+    /* ─── CONTACT ─── */
+    #contact h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+    }
+    #contact .intro {
+      color: var(--text-secondary);
+      font-size: 14.5px;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .contact-card:hover {
+      border-color: #c5d8ee;
+      box-shadow: 0 2px 12px rgba(45, 90, 142, 0.08);
+    }
+    .contact-icon { font-size: 20px; flex-shrink: 0; }
+    .contact-info .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .contact-info .value {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p { font-size: 12.5px; color: var(--text-muted); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      #about { grid-template-columns: 1fr; }
+      .avatar-wrap { flex-direction: row; justify-content: flex-start; }
+      .avatar { width: 90px; height: 90px; font-size: 32px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 70px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#about">Su Yiyun</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="hero-text">
+      <div class="section-label">About</div>
+      <h1>Su Yiyun</h1>
+      <p class="subtitle">
+        PhD Applicant &nbsp;·&nbsp;
+        <span>[Your University / Institution]</span>
+      </p>
+      <p>
+        I am a researcher with a strong interest in [your research area, e.g., machine learning, computational biology, linguistics]. My work focuses on [brief description of your core focus], aiming to [what you hope to achieve or understand].
+      </p>
+      <p>
+        I hold a [degree] from [university] and am currently applying to PhD programs in [field]. I am particularly interested in working on problems at the intersection of [topic A] and [topic B].
+      </p>
+      <div class="interests">
+        <span class="tag">Research Interest 1</span>
+        <span class="tag">Research Interest 2</span>
+        <span class="tag">Research Interest 3</span>
+        <span class="tag">Research Interest 4</span>
+        <span class="tag">Research Interest 5</span>
+      </div>
+      <div class="links-row">
+        <a class="btn btn-primary" href="cv.pdf" target="_blank">
+          📄 Download CV
+        </a>
+        <a class="btn btn-outline" href="mailto:yiyunsu2021@gmail.com">
+          ✉️ Email Me
+        </a>
+        <a class="btn btn-outline" href="https://scholar.google.com/citations?user=ia2p8XYAAAAJ&hl=en&oi=sra" target="_blank">
+          🎓 Google Scholar
+        </a>
+        <a class="btn btn-outline" href="https://github.com/suyiyun" target="_blank">
+          💻 GitHub
+        </a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <img src="selfie.jpg" alt="Su Yiyun" />
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">Research</div>
+    <h2>Research Interests &amp; Experience</h2>
+
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="research-icon">🔬</div>
+        <h3>Research Area 1</h3>
+        <p>Brief description of this research direction and what motivates your interest in it. 2–3 sentences work well here.</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">📊</div>
+        <h3>Research Area 2</h3>
+        <p>Describe the methods, questions, or domain you work in for this area. Keep it accessible to a broad academic audience.</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">🧠</div>
+        <h3>Research Area 3</h3>
+        <p>What problems are you trying to solve? What makes this important? How does your background contribute?</p>
+      </div>
+      <div class="research-card">
+        <div class="research-icon">🌐</div>
+        <h3>Research Area 4</h3>
+        <p>A fourth focus area or methodology, such as data collection, model evaluation, human subjects research, etc.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="section-label" style="margin-top: 2.5rem;">Experience</div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2024–Now</div>
+        <div class="timeline-content">
+          <h4>Research Assistant</h4>
+          <div class="org">Lab / Group Name · University Name</div>
+          <p>Brief description of your role, what you worked on, and any outcomes. E.g., "Developed a pipeline for processing X, contributing to a paper submitted to Y."</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h4>Research Intern</h4>
+          <div class="org">Organization / Company Name</div>
+          <p>What you built, studied, or contributed. Mention any tools or datasets involved.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2020–2024</div>
+        <div class="timeline-content">
+          <h4>B.Sc. in [Your Major]</h4>
+          <div class="org">University Name</div>
+          <p>GPA: X.XX / 4.0 &nbsp;·&nbsp; Relevant coursework: Course 1, Course 2, Course 3.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-label">Publications</div>
+    <h2>Publications &amp; Preprints</h2>
+
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-num">1</div>
+        <div>
+          <div class="pub-title">
+            <a href="#">Title of Your Most Recent Paper or Preprint</a>
+          </div>
+          <div class="pub-authors">
+            <span class="me">Su Yiyun</span>, Co-Author A, Co-Author B, Senior Author
+          </div>
+          <div class="pub-venue">Conference / Journal Name, Year</div>
+          <div class="pub-links">
+            <a class="pub-link" href="#">PDF</a>
+            <a class="pub-link" href="#">arXiv</a>
+            <a class="pub-link" href="#">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">2</div>
+        <div>
+          <div class="pub-title">
+            <a href="#">Title of Another Paper or Workshop Paper</a>
+          </div>
+          <div class="pub-authors">
+            Co-Author A, <span class="me">Su Yiyun</span>, Senior Author
+          </div>
+          <div class="pub-venue">Workshop at Conference Name, Year</div>
+          <div class="pub-links">
+            <a class="pub-link" href="#">PDF</a>
+            <a class="pub-link" href="#">Poster</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">3</div>
+        <div>
+          <div class="pub-title">
+            <a href="#">Title of Undergraduate Thesis or Technical Report</a>
+          </div>
+          <div class="pub-authors">
+            <span class="me">Su Yiyun</span>
+          </div>
+          <div class="pub-venue">Undergraduate Thesis · University Name, 2024</div>
+          <div class="pub-links">
+            <a class="pub-link" href="#">PDF</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2>Get in Touch</h2>
+    <p class="intro">
+      I'm always happy to discuss research ideas, collaborations, or PhD opportunities.
+      Feel free to reach out via any of the channels below.
+    </p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:yiyunsu2021@gmail.com">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-info">
+          <div class="label">Email</div>
+          <div class="value">yiyunsu2021@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=ia2p8XYAAAAJ&hl=en&oi=sra" target="_blank">
+        <div class="contact-icon">🎓</div>
+        <div class="contact-info">
+          <div class="label">Google Scholar</div>
+          <div class="value">Scholar Profile</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://github.com/suyiyun" target="_blank">
+        <div class="contact-icon">💻</div>
+        <div class="contact-info">
+          <div class="label">GitHub</div>
+          <div class="value">@suyiyun</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/yiyun-su-0193a31b6/" target="_blank">
+        <div class="contact-icon">🔗</div>
+        <div class="contact-info">
+          <div class="label">LinkedIn</div>
+          <div class="value">https://www.linkedin.com/in/yiyun-su-0193a31b6/</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://twitter.com" target="_blank">
+        <div class="contact-icon">𝕏</div>
+        <div class="contact-info">
+          <div class="label">Twitter / X</div>
+          <div class="value">@your-handle</div>
+        </div>
+      </a>
+      <a class="contact-card" href="cv.pdf" target="_blank">
+        <div class="contact-icon">📄</div>
+        <div class="contact-info">
+          <div class="label">Curriculum Vitae</div>
+          <div class="value">Download PDF</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Su Yiyun &nbsp;·&nbsp; Built with ❤️</p>
+  <p>Last updated: May 2026</p>
+</footer>
+
+</body>
+</html>
